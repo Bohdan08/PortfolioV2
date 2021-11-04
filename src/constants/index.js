@@ -28,7 +28,6 @@ export const DAILY_SKILLS = [
   "CSS/SCSS",
 ];
 
-// title, url, company, range
 export const EXPERIENCE_LIST = [
   {
     company: "BMO",
@@ -56,6 +55,60 @@ export const EXPERIENCE_LIST = [
       "Implemented mock-ups and cooperated with UI/UX designers",
       "Performed code review",
     ],
+  },
+];
+
+export const PROJECTS_TECHNOLOGIES = ["React.js"];
+
+export const PROJECTS_INFO = [
+  {
+    project: "English With Love",
+    description:
+      "An interactive language learn application for advanced learners.",
+
+    url: "https://ewl-staging.web.app",
+
+    mainTechnology: "React.js",
+    features: [
+      "Unique lessons crafted by professional and experienced coaches",
+      "Different categories such as Reading, Watching and Vocabulary content",
+      "An opportunity to save a current progress",
+      "A user profile with settings and statistic",
+    ],
+    technologies: [
+      "JavaScript (ES6+)",
+      "React.js",
+      "Redux",
+      "Redux-Persist",
+      "Firebase",
+      "HTML & CSS/SCSS",
+    ],
+    github: "https://gitlab.com/Bohdan881/in_english_with__love",
+    imgSrc:
+      "https://res.cloudinary.com/koruja/image/upload/v1609723617/portfolio/ewl/main_jcjc7m.png",
+  },
+  {
+    project: "KORUJA",
+    description:
+      "React Landing Page for a wholesale company based in South Korea",
+    url: "https://koruja-shop.ru",
+    mainTechnology: "React.js",
+    features: [
+      "A Company info",
+      "Detailed products information",
+      "A responsive landing page divided into 4 different sections",
+      "Bilingual",
+    ],
+    imgSrc:
+      "https://res.cloudinary.com/koruja/image/upload/v1609727249/portfolio/koruja/kmain_yhe2ny.png",
+    technologies: [
+      "JavaScript (ES6+)",
+      "HTML",
+      "React.js",
+      "CSS/SCCS",
+      "Semantic UI",
+    ],
+    github: "https://gitlab.com/Bohdan881/in_english_with__love",
   },
 ];
 

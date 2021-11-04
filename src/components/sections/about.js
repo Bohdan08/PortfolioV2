@@ -24,7 +24,7 @@ const StyledText = styled.div`
     grid-template-columns: repeat(2, minmax(140px, 200px));
     grid-gap: 0 10px;
     padding: 0;
-    margin: 20px 0 0 0;
+    margin-top: 10px;
     overflow: hidden;
     list-style: none;
 
@@ -124,8 +124,7 @@ const About = () => {
           <div>
             <p>
               Hi! My name is Bohdan Martyniuk and I'm a software developer. I
-              started my professional career in April 2019 as a software
-              developer at{" "}
+              started my professional career in April 2019 at{" "}
               <StyledLink
                 className="text-green-300 pointer outline-none"
                 href="https://www.mpac.ca/en"
@@ -138,7 +137,7 @@ const About = () => {
               Since then, I've been specializing in building dynamic web
               applications.
             </p>
-            <p>
+            <p className="pt-2">
               {" "}
               I utilize following languages and technologies on a daily basis:
             </p>

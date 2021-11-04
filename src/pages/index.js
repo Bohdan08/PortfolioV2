@@ -17,7 +17,7 @@ const IndexPage = () => (
       <Intro />
       <About />
       <Experience />
-      {/* <Projects /> */}
+      <Projects /> 
     </StyledMain>
   </Layout>
 );
