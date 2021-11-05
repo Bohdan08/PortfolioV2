@@ -22,12 +22,12 @@ const StyledAboutSection = styled.section`
     }
   }
 `;
-
+// max-width: 350px;
 const StyledPic = styled.div`
   position: relative;
-  max-width: 350px;
-  margin: auto;
 
+  margin: auto;
+  max-width: 350px;
   @media (max-width: 768px) {
     margin: 50px auto 0;
     width: 70%;
@@ -39,6 +39,7 @@ const StyledPic = styled.div`
     width: 100%;
     border-radius: var(--border-radius);
     background-color: var(--green);
+    border-radius: 2px;
 
     &:hover,
     &:focus {
@@ -59,6 +60,9 @@ const StyledPic = styled.div`
       mix-blend-mode: multiply;
       filter: grayscale(100%) contrast(1);
       transition: var(--transition);
+      height: 100%;
+      width: 100%;
+      max-height: 400px;
     }
   }
 `;
@@ -198,61 +202,6 @@ const StyledTabButton = styled.button`
   }
 `;
 
-const StyledTabPanels = styled.div`
-  position: relative;
-  width: 100%;
-  margin-left: 20px;
-  @media (max-width: 600px) {
-    margin-left: 0;
-  }
-`;
-
-const StyledTabPanel = styled.div`
-  width: 100%;
-  height: auto;
-  padding: 10px 5px;
-
-  ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    font-size: var(--text-lg);
-    li {
-      position: relative;
-      padding-left: 30px;
-      margin-bottom: 10px;
-      &:before {
-        content: "▹";
-        position: absolute;
-        left: 0;
-        color: var(--green);
-      }
-    }
-  }
-
-  h3 {
-    margin-bottom: 2px;
-    font-size: var(--fz-xxl);
-    font-weight: 500;
-    line-height: 1.3;
-    .company {
-      color: var(--green);
-    }
-  }
-  .range {
-    margin-bottom: 25px;
-    color: var(--light-slate);
-    font-family: var(--font-mono);
-    font-size: var(--fz-xs);
-  }
-`;
-
-const StyledLink = styled.a`
-  &:focus {
-    underline: link;
-  }
-`;
-
 const StyledHighlight = styled.div`
   position: absolute;
   top: 0;
@@ -283,9 +232,15 @@ const StyledHighlight = styled.div`
   }
 `;
 
+const ProjectsContainer = styled.div`
+  max-height: 600px;
+  overflow: scroll;
+`;
+
 const Projects = () => {
   const [activeTabId, setActiveTabId] = useState(0);
   const [tabFocus, setTabFocus] = useState(null);
+  const [activeTabName, setActiveTabName] = useState(PROJECTS_TECHNOLOGIES[0]);
 
   const tabs = useRef([]);
 
@@ -337,26 +292,28 @@ const Projects = () => {
           aria-label="Experience"
           onKeyDown={(e) => onKeyDown(e)}
         >
-          {PROJECTS_TECHNOLOGIES.map((mainTechnology, index) => {
-            return (
-              <StyledTabButton
-                className="link"
-                key={index}
-                isActive={activeTabId === index}
-                onClick={() => setActiveTabId(index)}
-                id={`tab-${index}`}
-                role="tab"
-                tabIndex={activeTabId === index ? "0" : "-1"}
-                aria-selected={activeTabId === index}
-                aria-controls={`panel-${index}`}
-              >
-                <span>{mainTechnology}</span>
-              </StyledTabButton>
-            );
-          })}
+          {PROJECTS_TECHNOLOGIES.map((mainTechnology, index) => (
+            <StyledTabButton
+              className="link"
+              key={index}
+              isActive={activeTabId === index}
+              onClick={() => {
+                setActiveTabId(index);
+                setActiveTabName(mainTechnology);
+              }}
+              id={`tab-${index}`}
+              role="tab"
+              tabIndex={activeTabId === index ? "0" : "-1"}
+              aria-selected={activeTabId === index}
+              aria-controls={`panel-${index}`}
+            >
+              <span>{mainTechnology}</span>
+            </StyledTabButton>
+          ))}
+
           <StyledHighlight activeTabId={activeTabId} />
         </StyledTabList>
-        <div className="w-100 flex flex-col">
+        <ProjectsContainer className="w-100 flex flex-col ml-5">
           {PROJECTS_INFO.map(
             (
               {
@@ -367,10 +324,11 @@ const Projects = () => {
                 technologies,
                 github,
                 imgSrc,
+                mainTechnology,
               },
               index
-            ) => {
-              return (
+            ) =>
+              mainTechnology === activeTabName && (
                 <div key={index} className="mb-5">
                   {" "}
                   <div
@@ -433,10 +391,9 @@ const Projects = () => {
                     </IconContainer>
                   </div>
                 </div>
-              );
-            }
+              )
           )}
-        </div>
+        </ProjectsContainer>
       </div>
     </StyledAboutSection>
   );
