@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
+import { CSSTransition } from "react-transition-group";
 import { EXPERIENCE_LIST, KEY_CODES } from "../../constants";
 
 const StyledAboutSection = styled.section`
@@ -28,16 +29,8 @@ const StyledTabList = styled.div`
   @media (max-width: 600px) {
     display: flex;
     overflow-x: auto;
-    width: calc(100% + 100px);
-    padding-left: 50px;
-    margin-left: -50px;
+    width: 100%;
     margin-bottom: 30px;
-  }
-
-  @media (max-width: 480px) {
-    width: calc(100% + 50px);
-    padding-left: 25px;
-    margin-left: -25px;
   }
 
   li {
@@ -71,6 +64,7 @@ const StyledTabButton = styled.button`
   border-left: 2px solid var(--lightest-navy);
   background-color: transparent;
   color: ${({ isActive }) => (isActive ? "var(--green)" : "var(--slate)")};
+
   font-family: var(--font-mono);
   font-size: var(--text-sm);
   text-align: left;
@@ -81,16 +75,19 @@ const StyledTabButton = styled.button`
   }
 
   @media (max-width: 600px) {
+    justify-content: center;
     min-width: 120px;
     padding: 0 15px;
     border-left: 0;
-    border-bottom: 2px solid var(--lightest-navy);
+    border-bottom: ${({ isActive }) =>
+      isActive ? "2px solid var(--green)" : "none"};
+    outline: none !important;
     text-align: center;
   }
 
   &:hover,
   &:focus {
-    background-color: var(--light-navy);
+    background-color: var(--pantone);
   }
 `;
 
@@ -98,6 +95,7 @@ const StyledTabPanels = styled.div`
   position: relative;
   width: 100%;
   margin-left: 20px;
+
   @media (max-width: 600px) {
     margin-left: 0;
   }
@@ -113,15 +111,23 @@ const StyledTabPanel = styled.div`
     margin: 0;
     list-style: none;
     font-size: var(--text-lg);
+
     li {
       position: relative;
-      padding-left: 30px;
+      padding-left: 20px;
       margin-bottom: 10px;
+
       &:before {
-        content: "▹";
+        content: "";
         position: absolute;
         left: 0;
-        color: var(--green);
+        top: 10px;
+        height: 5px;
+        width: 5px;
+        border: 1px solid var(--green);
+        border-width: 2px 2px 0 0;
+        line-height: 12px;
+        transform: rotate(45deg);
       }
     }
   }
@@ -162,20 +168,10 @@ const StyledHighlight = styled.div`
     calc(${({ activeTabId }) => activeTabId} * var(--tab-height))
   );
   transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
-  transition-delay: 0.1s;
+  transition-delay: 0.15s;
+
   @media (max-width: 600px) {
-    top: auto;
-    bottom: 0;
-    width: 100%;
-    max-width: var(--tab-width);
-    height: 2px;
-    margin-left: 50px;
-    transform: translateX(
-      calc(${({ activeTabId }) => activeTabId} * var(--tab-width))
-    );
-  }
-  @media (max-width: 480px) {
-    margin-left: 25px;
+    display: none;
   }
 `;
 
@@ -233,59 +229,64 @@ const Experience = () => {
           aria-label="Experience"
           onKeyDown={(e) => onKeyDown(e)}
         >
-          {EXPERIENCE_LIST.map(({ company }, index) => {
-            return (
-              <StyledTabButton
-                className="link"
-                key={index}
-                isActive={activeTabId === index}
-                onClick={() => setActiveTabId(index)}
-                id={`tab-${index}`}
-                role="tab"
-                tabIndex={activeTabId === index ? "0" : "-1"}
-                aria-selected={activeTabId === index}
-                aria-controls={`panel-${index}`}
-              >
-                <span>{company}</span>
-              </StyledTabButton>
-            );
-          })}
+          {EXPERIENCE_LIST.map(({ company }, index) => (
+            <StyledTabButton
+              className="link"
+              key={index}
+              isActive={activeTabId === index}
+              onClick={() => setActiveTabId(index)}
+              id={`tab-${index}`}
+              role="tab"
+              tabIndex={activeTabId === index ? "0" : "-1"}
+              aria-selected={activeTabId === index}
+              aria-controls={`panel-${index}`}
+            >
+              <span>{company}</span>
+            </StyledTabButton>
+          ))}
           <StyledHighlight activeTabId={activeTabId} />
         </StyledTabList>
 
         <StyledTabPanels>
           {EXPERIENCE_LIST.map(
             ({ title, url, company, timeLine, workDone }, index) => (
-              <StyledTabPanel
+              <CSSTransition
                 key={index}
-                id={`panel-${index}`}
-                role="tabpanel"
-                tabIndex={activeTabId === index ? "0" : "-1"}
-                aria-labelledby={`tab-${index}`}
-                aria-hidden={activeTabId !== index}
-                hidden={activeTabId !== index}
+                in={activeTabId === index}
+                timeout={300}
+                classNames="alert"
+                unmountOnExit
               >
-                <h3>
-                  <span>{title}</span>
-                  <span className="company">
-                    &nbsp;@&nbsp;
-                    <StyledLink
-                      href={url}
-                      className="inline-link link focus:outline-none"
-                    >
-                      {company}
-                    </StyledLink>
-                  </span>
-                </h3>
+                <StyledTabPanel
+                  key={index}
+                  id={`panel-${index}`}
+                  role="tabpanel"
+                  tabIndex={activeTabId === index ? "0" : "-1"}
+                  aria-labelledby={`tab-${index}`}
+                  aria-hidden={activeTabId !== index}
+                  hidden={activeTabId !== index}
+                >
+                  <h3>
+                    <span>{title}</span>
+                    <span className="company">
+                      &nbsp;@&nbsp;
+                      <StyledLink
+                        href={url}
+                        className="inline-link link focus:outline-none"
+                      >
+                        {company}
+                      </StyledLink>
+                    </span>
+                  </h3>
 
-                <p className="range">{timeLine}</p>
+                  <p className="range">{timeLine}</p>
 
-                <ul>
-                  {workDone.map((item, key) => (
-                    <li key={key}>{item} </li>
-                  ))}
-                </ul>
-              </StyledTabPanel>
+                  <ul>
+                    {workDone &&
+                      workDone.map((item, key) => <li key={key}>{item} </li>)}
+                  </ul>
+                </StyledTabPanel>
+              </CSSTransition>
             )
           )}
         </StyledTabPanels>

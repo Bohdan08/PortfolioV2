@@ -1,6 +1,13 @@
 import * as React from "react";
 import { Layout } from "../components";
-import { Intro, About, Experience, Projects } from "../components/sections";
+import PropTypes from "prop-types";
+import {
+  Intro,
+  About,
+  Experience,
+  Projects,
+  Contact,
+} from "../components/sections";
 import styled from "styled-components";
 
 // import "../styles/GlobalStyle.js";
@@ -17,9 +24,14 @@ const IndexPage = () => (
       <Intro />
       <About />
       <Experience />
-      <Projects /> 
+      <Projects />
+      <Contact />
     </StyledMain>
   </Layout>
 );
+
+IndexPage.propTypes = {
+  location: PropTypes.object.isRequired,
+};
 
 export default IndexPage;

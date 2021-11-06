@@ -34,79 +34,96 @@ const StyledText = styled.div`
       padding-left: 20px;
       font-family: var(--font-mono);
       font-size: var(--text-sm);
+      list-style: none;
 
       &:before {
-        content: "▹";
+        content: "";
         position: absolute;
         left: 0;
-        color: var(--green);
-        font-size: var(--text-sm);
+        top: 10px;
+        height: 5px;
+        width: 5px;
+        border: 1px solid var(--green);
+        border-width: 2px 2px 0 0;
         line-height: 12px;
-        top: 6px;
+        transform: rotate(45deg);
       }
     }
   }
 `;
 
-const StyledPic = styled.div`
-  position: relative;
-  max-width: 300px;
+// &:before {
+//   content: "▹";
+//   position: absolute;
+//   left: 0;
+//   color: var(--green);
+//   font-size: var(--text-sm);
+//   line-height: 12px;
+//   top: 6px;
+// }
 
-  @media (max-width: 768px) {
-    margin: 50px auto 0;
-    width: 70%;
-  }
+// const StyledPic = styled.div`
+//   position: relative;
+//   max-width: 300px;
 
-  .wrapper {
-    display: block;
-    position: relative;
-    width: 100%;
-    border-radius: var(--border-radius);
-    background-color: var(--green);
-    &:hover,
-    &:focus {
-      background: transparent;
-      outline: 0;
-      &:after {
-        top: 15px;
-        left: 15px;
-      }
-      .img {
-        filter: none;
-        mix-blend-mode: normal;
-      }
-    }
-    .img {
-      position: relative;
-      border-radius: var(--border-radius);
-      mix-blend-mode: multiply;
-      filter: grayscale(100%) contrast(1);
-      transition: var(--transition);
-    }
-    &:before,
-    &:after {
-      content: "";
-      display: block;
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border-radius: var(--border-radius);
-      transition: var(--transition);
-    }
-    &:before {
-      top: 0;
-      left: 0;
-      background-color: var(--navy);
-      mix-blend-mode: screen;
-    }
-    &:after {
-      border: 2px solid var(--green);
-      top: 20px;
-      left: 20px;
-      z-index: -1;
-    }
-  }
-`;
+//   @media (max-width: 768px) {
+//     margin: 50px auto 0;
+//     width: 70%;
+//   }
+
+//   .wrapper {
+//     display: block;
+//     position: relative;
+//     width: 100%;
+//     border-radius: var(--border-radius);
+//     background-color: var(--green);
+
+//     &:hover,
+//     &:focus {
+//       background: transparent;
+//       outline: 0;
+//       &:after {
+//         top: 15px;
+//         left: 15px;
+//       }
+//       .img {
+//         filter: none;
+//         mix-blend-mode: normal;
+//       }
+//     }
+
+//     .img {
+//       position: relative;
+//       border-radius: var(--border-radius);
+//       mix-blend-mode: multiply;
+//       filter: grayscale(100%) contrast(1);
+//       transition: var(--transition);
+//     }
+
+//     &:before,
+//     &:after {
+//       content: "";
+//       display: block;
+//       position: absolute;
+//       width: 100%;
+//       height: 100%;
+//       border-radius: var(--border-radius);
+//       transition: var(--transition);
+//     }
+//     &:before {
+//       top: 0;
+//       left: 0;
+//       background-color: var(--navy);
+//       mix-blend-mode: screen;
+//     }
+//     &:after {
+//       border: 2px solid var(--green);
+//       top: 20px;
+//       left: 20px;
+//       z-index: -1;
+//     }
+//   }
+// `;
 
 const StyledLink = styled.a`
   &:focus {
@@ -114,49 +131,54 @@ const StyledLink = styled.a`
   }
 `;
 
-const About = () => {
-  return (
-    <StyledAboutSection id="about">
-      {" "}
-      <h2 className="section-heading">About Me</h2>
-      <div className="inner">
-        <StyledText>
-          <div>
-            <p>
-              Hi! My name is Bohdan Martyniuk and I'm a software developer. I
-              started my professional career in April 2019 at{" "}
-              <StyledLink
-                className="text-green-300 pointer outline-none"
-                href="https://www.mpac.ca/en"
-                target="_blank"
-                rel="noreferrer"
-              >
-                {" "}
-                MPAC.
-              </StyledLink>{" "}
-              Since then, I've been specializing in building dynamic web
-              applications.
-            </p>
-            <p className="pt-2">
+const About = () => (
+  <StyledAboutSection id="about">
+    {" "}
+    <h2 className="section-heading">About Me</h2>
+    <div className="inner">
+      <StyledText>
+        <div>
+          <p>
+            My name is Bohdan Martyniuk and I'm a software developer. I started
+            my professional career in April 2019 at{" "}
+            <StyledLink
+              className="text-green-300 pointer outline-none"
+              href="https://www.mpac.ca/en"
+              target="_blank"
+              rel="noreferrer"
+            >
               {" "}
-              I utilize following languages and technologies on a daily basis:
-            </p>
-          </div>
-          <ul className="skills-list">
-            {DAILY_SKILLS.map((skill) => (
-              <li key={skill}>{skill}</li>
-            ))}
-          </ul>
-        </StyledText>
+              MPAC.
+            </StyledLink>{" "}
+            Since then, I've been specializing in building dynamic web
+            applications.
+          </p>
+          <p className="pt-2">
+            {" "}
+            I utilize following languages and technologies on a daily basis:
+          </p>
+        </div>
+        <ul className="skills-list">
+          {DAILY_SKILLS.map((skill) => (
+            <li key={skill}>{skill}</li>
+          ))}
+        </ul>
+      </StyledText>
 
-        <StyledPic>
-          <div className="wrapper">
-            <img className="img" src={me} width={500} quality={95} alt="" />
-          </div>
-        </StyledPic>
-      </div>
-    </StyledAboutSection>
-  );
-};
+      {/* <StyledPic>
+        <div className="wrapper">
+          <img className="img" src={me} width={500} quality={95} alt="" />
+        </div>
+      </StyledPic> */}
+      <img
+        className="rounded-full w-2/3 mx-auto mt-5 md:m-0 md:w-full"
+        src={me}
+        width={300}
+        quality={95}
+        alt=""
+      />
+    </div>
+  </StyledAboutSection>
+);
 
 export default About;

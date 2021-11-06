@@ -16,7 +16,7 @@ const StyledLink = styled.a`
 const Intro = () => (
   <section>
     <h1 className="text-green-300 text-lg">Hi, my name is</h1>
-    <StyledHeader className="text-7xl mt-2 font-semibold text-gray-100">
+    <StyledHeader className="mt-2 font-semibold text-gray-100 big-heading">
       Bohdan Martyniuk.
     </StyledHeader>
     <p className="pt-5 text-gray-400 text-lg">

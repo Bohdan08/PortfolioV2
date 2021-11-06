@@ -20,7 +20,7 @@ export const NAV_LINKS = [
 ];
 
 export const DAILY_SKILLS = [
-  "JavaScript (ES6+)",
+  "JavaScript ",
   "TypeScript",
   "React",
   "Redux",
@@ -76,7 +76,7 @@ export const PROJECTS_INFO = [
       "A user profile with settings and statistic",
     ],
     technologies: [
-      "JavaScript (ES6+)",
+      "JavaScript ",
       "React",
       "Redux",
       "Redux-Persist",
@@ -104,7 +104,7 @@ export const PROJECTS_INFO = [
       "https://res.cloudinary.com/koruja/image/upload/v1636132454/portfolio/koruja/kmain_yhe2ny_1_qpglpl_reduced.png",
     // "https://res.cloudinary.com/koruja/image/upload/v1609727249/portfolio/koruja/kmain_yhe2ny.png",
     technologies: [
-      "JavaScript (ES6+)",
+      "JavaScript ",
       "HTML",
       "React",
       "CSS/SCCS",
@@ -124,7 +124,7 @@ export const PROJECTS_INFO = [
     ],
     imgSrc:
       "https://res.cloudinary.com/koruja/image/upload/v1636132198/portfolio/reviewer/ReviwerReduced_mksyha.png",
-    technologies: ["JavaScript (ES6+)", "HTML", "React", "CSS", "AWS/EC2"],
+    technologies: ["JavaScript ", "HTML", "React", "CSS", "AWS/EC2"],
     github: "https://github.com/Bohdan08/repman-ui",
   },
   // Vue
@@ -139,7 +139,7 @@ export const PROJECTS_INFO = [
       "A web-page that divided into 3 main categories such as Portfolio, My Offer and Contact me",
     ],
     technologies: [
-      "JavaScript (ES6+)",
+      "JavaScript ",
       "Vue",
       "Firebase",
       "HTML",
@@ -168,7 +168,7 @@ export const PROJECTS_INFO = [
       "A user profile with settings and statistic",
     ],
     technologies: [
-      "JavaScript (ES6+)",
+      "JavaScript ",
       "React Native",
       "Redux",
       "HTML",
@@ -198,3 +198,20 @@ export const KEY_CODES = {
   SPACE_IE11: "Spacebar",
   ENTER: "Enter",
 };
+
+export const EMAIL = "bohdan.martyniuk19@gmail.com";
+
+export const SOCIAL_LINKS = [
+  {
+    name: "GitHub",
+    url: "https://github.com/Bohdan08",
+  },
+  {
+    name: "GitLab",
+    url: "https://gitlab.com/Bohdan881",
+  },
+  {
+    name: "Linkedin",
+    url: "https://www.linkedin.com/in/bohdan-martyniuk-244009142",
+  },
+];

@@ -1,12 +1,10 @@
 /* colors */
 
-// $navy: #0a192f;
-// $aquamarine: #64ffda;
-
 import { css } from "styled-components";
 
 const variables = css`
   :root {
+    --light-black: #151617;
     --dark-navy: #020c1b;
     --navy: #0a192f;
     --light-navy: #112240;
@@ -18,6 +16,8 @@ const variables = css`
     --lightest-slate: #ccd6f6;
     --white: #e6f1ff;
     --green: #64ffda;
+    --green-tint: rgba(100, 255, 218, 0.1);
+    --pantone: #212221;
 
     --font-sans: "Calibre", "Inter", "San Francisco", "SF Pro Text",
       -apple-system, system-ui, sans-serif;
@@ -35,6 +35,7 @@ const variables = css`
     --tab-height: 42px;
     --tab-width: 120px;
 
+    --border-radius: 4px;
     --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   }
 `;

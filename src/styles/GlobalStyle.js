@@ -1,66 +1,52 @@
-// @tailwind base;
-// @tailwind components;
-// @tailwind utilities;
-
-// @import "./variables.js";
 import { createGlobalStyle } from "styled-components";
 import variables from "./variables";
 
-// // html {
-// //   scrollbar-width: thin;
-// // }
+//   outline: 2px dashed var(--green);
+//  body: color: var(--slate);
 
-// // main {
-// //   margin: 0 auto;
-// //   width: 100%;
-// //   max-width: 1600px;
-// //   min-height: 100vh;
-// //   padding: 200px 150px;
-
-// //   @media (max-width: 1080px) {
-// //     padding: 200px 100px;
-// //   }
-
-// //   @media (max-width: 768px) {
-// //     padding: 150px 50px;
-// //   }
-
-// //   @media (max-width: 480px) {
-// //     padding: 125px 25px;
-// //   }
-
-// //   &.fillHeight {
-// //     padding: 0 150px;
-
-// //     @media (max-width: 1080px) {
-// //       padding: 0 100px;
-// //     }
-
-// //     @media (max-width: 768px) {
-// //       padding: 0 50px;
-// //     }
-
-// //     @media (max-width: 480px) {
-// //       padding: 0 25px;
-// //     }
-// //   }
-// // }
+// .big-button {
+//   color: var(--green);
+//   background-color: transparent;
+//   border: 1px solid var(--green);
+//   border-radius: var(--border-radius);
+//   padding: 0.75rem 1rem;
+//   font-size: var(--fz-xs);
+//   font-family: var(--font-mono);
+//   line-height: 1;
+//   text-decoration: none;
+//   cursor: pointer;
+//   transition: var(--transition);
+//   &:hover,
+//   &:focus,
+//   &:active {
+//     background-color: var(--green-tint);
+//     outline: none;
+//   }
+//   &:after {
+//     display: none !important;
+//   }
+// }
 
 const GlobalStyle = createGlobalStyle`
 ${variables};
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
   width: 100%;
   min-height: 100%;
   overflow-x: hidden;
-  background: var(--navy);
+  background: var(--light-black);
   color: var(--slate);
 }
 
 :focus {
-  outline: 2px dashed var(--green);
-  outline-offset: 3px;
+  outline: 1px solid var(--green);
+  outline-offset: 2px;
+  border-radius: 1px;
 }
 
 #root {
@@ -154,8 +140,30 @@ a {
   &:hover,
   &:focus {
     color: var(--green);
-
   }
+}
+
+.big-button {
+    color:  var(--green);
+    background-color: transparent;
+    border: 1px solid var(--green);
+    border-radius: var(--border-radius);
+    padding: 0.75rem 1rem;
+    font-size: var(--fz-xs);
+    font-family: var(--font-mono);
+    line-height: 1;
+    text-decoration: none;
+    cursor: pointer;
+    transition: var(--transition);
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: var(--green-tint);
+      outline: none;
+    }
+    &:after {
+      display: none !important;
+    }
 }
 
 .link {
@@ -165,12 +173,18 @@ a {
   color: inherit;
   position: relative;
   transition: var(--transition);
+  
   &:hover,
   &:active,
   &:focus {
     color: var(--green);
     outline: 0;
   }
+}
+
+.big-heading {
+  margin: 0;
+  font-size: clamp(40px, 8vw, 80px);
 }
 
 .section-heading {

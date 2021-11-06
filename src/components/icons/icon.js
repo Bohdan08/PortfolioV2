@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { IconExternal, IconGitHub, IconLinkedin } from "./index";
+import { IconExternal, IconGitHub, IconLinkedin, IconGitLab } from "./index";
 
 const Icon = ({ name }) => {
   switch (name) {
@@ -10,6 +10,8 @@ const Icon = ({ name }) => {
       return <IconGitHub />;
     case "Linkedin":
       return <IconLinkedin />;
+    case "GitLab":
+      return <IconGitLab />;
     default:
       return <IconExternal />;
   }

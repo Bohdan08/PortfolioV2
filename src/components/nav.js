@@ -16,41 +16,41 @@ const StyledLogo = styled.img`
   height: 70px;
 `;
 
-const Nav = () => {
-  return (
-    <header className="flex t-0 px-12 h-24 text-gray-200 text-sm">
-      <nav className="flex justify-between items-center relative w-full">
-        <div className="flex justify-center items-center">
-          {" "}
-          <StyledLogo src={logo} alt="" />
-        </div>
-        <div className="md:flex items-center hidden">
-          <ul className="flex justify-between p-0 m-0 list-none">
-            {NAV_LINKS.map(({ name, url }) => (
-              <StyledNavItem
-                className="my-0 mx-2 hover:text-green-300"
-                key={name}
-              >
-                <Link to={url} className="py-0 px-2">
-                  {name}
-                </Link>
-              </StyledNavItem>
-            ))}
-          </ul>
-          <div>
-            <a
-              className="resume-button hover:text-green-300 border rounded border-green-300 py-3 px-4 ml-4 pointer"
-              target="_blank"
-              rel="noopener noreferrer"
+const Nav = () => (
+  <header className="flex t-0 px-12 h-24 text-gray-200 text-sm">
+    <nav className="flex justify-between items-center relative w-full">
+      <div className="flex justify-center items-center">
+        {" "}
+        <StyledLogo src={logo} alt="" />
+      </div>
+      <div className="md:flex items-center hidden">
+        <ul className="flex justify-between p-0 m-0 list-none">
+          {NAV_LINKS.map(({ name, url }) => (
+            <StyledNavItem
+              className="my-0 mx-2 hover:text-green-300"
+              key={name}
             >
-              Resume
-            </a>
-          </div>
+              <Link to={url} className="py-0 px-2">
+                {name}
+              </Link>
+            </StyledNavItem>
+          ))}
+        </ul>
+        <div>
+          <a
+            href=""
+            tabIndex="0"
+            className="big-button cursor-pointer hover:text-green-300  border rounded border-green-300 py-3 px-4 ml-4 pointer"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Resume
+          </a>
         </div>
-        <MobileNav />
-      </nav>
-    </header>
-  );
-};
+      </div>
+      <MobileNav />
+    </nav>
+  </header>
+);
 
 export default Nav;

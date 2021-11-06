@@ -6,9 +6,8 @@ import {
   PROJECTS_TECHNOLOGIES,
 } from "../../constants";
 import Icon from "../icons/icon";
-// import { Icon } from "../icons/icon";
 
-const StyledAboutSection = styled.section`
+const StyledProjectsSection = styled.section`
   max-width: 1000px;
 
   .inner {
@@ -22,15 +21,19 @@ const StyledAboutSection = styled.section`
     }
   }
 `;
-// max-width: 350px;
+
+// @media (max-width: 768px) {
+//   margin: 50px auto 0;
+//   width: 70%;
+// }
 const StyledPic = styled.div`
   position: relative;
-
   margin: auto;
   max-width: 350px;
+
   @media (max-width: 768px) {
-    margin: 50px auto 0;
-    width: 70%;
+    margin: auto;
+    width: 80%;
   }
 
   .wrapper {
@@ -54,6 +57,7 @@ const StyledPic = styled.div`
         mix-blend-mode: normal;
       }
     }
+
     .img {
       position: relative;
       border-radius: var(--border-radius);
@@ -68,23 +72,27 @@ const StyledPic = styled.div`
 `;
 
 const StyledList = styled.ul`
-
-
     padding: 0;
     margin: 0;
     list-style: none;
     font-size: var(--text-sm);
     margin-top: 10px;
+
     li {
       position: relative;
       padding-left: 20px;
       margin-bottom: 5px;
       &:before {
-        content: "▹";
+        content: "";
         position: absolute;
         left: 0;
-        top: 0;
-        color: var(--green);
+        top: 7px;
+        height: 5px;
+        width: 5px;
+        border: 1px solid var(--green);
+        border-width: 2px 2px 0 0;
+        line-height: 12px;
+        transform: rotate(45deg);
       }
 `;
 
@@ -103,11 +111,16 @@ const StyledListSkills = styled.ul`
       padding-left: 20px;
       margin-bottom: 5px;
       &:before {
-        content: "▹";
+        content: "";
         position: absolute;
         left: 0;
-        top: 0;
-        color: var(--green);
+        top: 7px;
+        height: 5px;
+        width: 5px;
+        border: 1px solid var(--green);
+        border-width: 2px 2px 0 0;
+        line-height: 12px;
+        transform: rotate(45deg);
       }
 `;
 
@@ -126,6 +139,19 @@ const IconContainer = styled.div`
   }
 `;
 
+// @media (max-width: 600px) {
+//   display: flex;
+//   overflow-x: auto;
+//   width: calc(100% + 100px);
+//   padding-left: 50px;
+//   margin-left: -50px;
+//   margin-bottom: 30px;
+// }
+
+//   width: calc(100% + 50px);
+// padding-left: 25px;
+// margin-left: -25px;
+
 const StyledTabList = styled.div`
   position: relative;
   z-index: 3;
@@ -137,16 +163,8 @@ const StyledTabList = styled.div`
   @media (max-width: 600px) {
     display: flex;
     overflow-x: auto;
-    width: calc(100% + 100px);
-    padding-left: 50px;
-    margin-left: -50px;
+    width: 100%;
     margin-bottom: 30px;
-  }
-
-  @media (max-width: 480px) {
-    width: calc(100% + 50px);
-    padding-left: 25px;
-    margin-left: -25px;
   }
 
   li {
@@ -170,6 +188,7 @@ const StyledTabList = styled.div`
     }
   }
 `;
+
 const StyledTabButton = styled.button`
   display: flex;
   align-items: center;
@@ -179,6 +198,7 @@ const StyledTabButton = styled.button`
   border-left: 2px solid var(--lightest-navy);
   background-color: transparent;
   color: ${({ isActive }) => (isActive ? "var(--green)" : "var(--slate)")};
+
   font-family: var(--font-mono);
   font-size: var(--text-sm);
   text-align: left;
@@ -189,16 +209,19 @@ const StyledTabButton = styled.button`
   }
 
   @media (max-width: 600px) {
+    justify-content: center;
     min-width: 120px;
     padding: 0 15px;
     border-left: 0;
-    border-bottom: 2px solid var(--lightest-navy);
+    border-bottom: ${({ isActive }) =>
+      isActive ? "2px solid var(--green)" : "none"};
+    outline: none !important;
     text-align: center;
   }
 
   &:hover,
   &:focus {
-    background-color: var(--light-navy);
+    background-color: var(--pantone);
   }
 `;
 
@@ -217,18 +240,7 @@ const StyledHighlight = styled.div`
   transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition-delay: 0.1s;
   @media (max-width: 600px) {
-    top: auto;
-    bottom: 0;
-    width: 100%;
-    max-width: var(--tab-width);
-    height: 2px;
-    margin-left: 50px;
-    transform: translateX(
-      calc(${({ activeTabId }) => activeTabId} * var(--tab-width))
-    );
-  }
-  @media (max-width: 480px) {
-    margin-left: 25px;
+    display: none;
   }
 `;
 
@@ -236,6 +248,29 @@ const ProjectsContainer = styled.div`
   max-height: 600px;
   overflow: scroll;
 `;
+
+const ImageComponent = ({ imgSrc, url }) => (
+  <StyledPic>
+    <div className="wrapper">
+      <a
+        href={url}
+        className="block"
+        aria-label="External Link"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <img className="img" src={imgSrc} alt="" />
+      </a>
+    </div>
+  </StyledPic>
+);
+
+const StyledProjectContainer = styled.div`
+  .inner-project-container {
+    background-color: var(--pantone);
+  }
+`;
+// style={{ background: "#112240" }}
 
 const Projects = () => {
   const [activeTabId, setActiveTabId] = useState(0);
@@ -283,7 +318,7 @@ const Projects = () => {
   };
 
   return (
-    <StyledAboutSection id="projects">
+    <StyledProjectsSection id="projects">
       {" "}
       <h2 className="section-heading">Side Projects</h2>
       <div className="inner">
@@ -329,12 +364,9 @@ const Projects = () => {
               index
             ) =>
               mainTechnology === activeTabName && (
-                <div key={index} className="mb-5">
+                <StyledProjectContainer key={index} className="mb-5 last:m-0">
                   {" "}
-                  <div
-                    className="rounded p-5 grid grid-cols-2"
-                    style={{ background: "#112240" }}
-                  >
+                  <div className="inner-project-container rounded p-5 grid md:grid-cols-2 sm:grid-cols-1 sm:justify-center">
                     <div>
                       <h4 className="text-xl"> {project} </h4>
                       <p className="pt-2">{description}</p>
@@ -346,26 +378,14 @@ const Projects = () => {
                       </StyledList>
 
                       <p className="text-green-300 pt-5"> Main Technologies </p>
-                      <StyledListSkills className="list-outside text-sm skills-list">
+                      <StyledListSkills className="list-outside text-sm">
                         {technologies.map((item) => (
                           <li key={item}> {item} </li>
                         ))}
                       </StyledListSkills>
                     </div>
-                    <div className="m-auto">
-                      <StyledPic>
-                        <div className="wrapper">
-                          <a
-                            href={url}
-                            className="block"
-                            aria-label="External Link"
-                            target="_blank"
-                            rel="noreferrer"
-                          >
-                            <img className="img" src={imgSrc} alt="" />
-                          </a>
-                        </div>
-                      </StyledPic>
+                    <div className="m-auto hidden md:block">
+                      <ImageComponent imgSrc={imgSrc} url={url} />
                     </div>
                     <IconContainer className="pt-4">
                       {github && (
@@ -390,12 +410,12 @@ const Projects = () => {
                       )}
                     </IconContainer>
                   </div>
-                </div>
+                </StyledProjectContainer>
               )
           )}
         </ProjectsContainer>
       </div>
-    </StyledAboutSection>
+    </StyledProjectsSection>
   );
 };
 
