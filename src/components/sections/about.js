@@ -125,6 +125,10 @@ const StyledText = styled.div`
 //   }
 // `;
 
+const StyledImage = styled.img`
+  max-width: 300px;
+`;
+
 const StyledLink = styled.a`
   &:focus {
     text-decoration: underline;
@@ -170,10 +174,9 @@ const About = () => (
           <img className="img" src={me} width={500} quality={95} alt="" />
         </div>
       </StyledPic> */}
-      <img
-        className="rounded-full w-2/3 mx-auto mt-5 md:m-0 md:w-full"
+      <StyledImage
+        className="rounded-full w-2/3 mx-auto mt-5 md:m-0 md:w-full hidden md:block"
         src={me}
-        width={300}
         quality={95}
         alt=""
       />

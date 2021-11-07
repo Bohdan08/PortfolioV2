@@ -18,8 +18,8 @@ const StyledMain = styled.main`
   min-height: 100vh;
 `;
 
-const IndexPage = () => (
-  <Layout>
+const IndexPage = ({ location }) => (
+  <Layout location={location}>
     <StyledMain className="my-0 mx-auto w-100 fillHeight">
       <Intro />
       <About />

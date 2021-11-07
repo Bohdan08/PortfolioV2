@@ -270,7 +270,6 @@ const StyledProjectContainer = styled.div`
     background-color: var(--pantone);
   }
 `;
-// style={{ background: "#112240" }}
 
 const Projects = () => {
   const [activeTabId, setActiveTabId] = useState(0);
@@ -329,7 +328,7 @@ const Projects = () => {
         >
           {PROJECTS_TECHNOLOGIES.map((mainTechnology, index) => (
             <StyledTabButton
-              className="link"
+              className="link focus:outline-none"
               key={index}
               isActive={activeTabId === index}
               onClick={() => {

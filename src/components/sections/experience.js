@@ -106,11 +106,16 @@ const StyledTabPanel = styled.div`
   height: auto;
   padding: 10px 5px;
 
+  text-transform: none;
+  transition-timing-function: linear;
+  transition-duration: 0.15s;
+  transition-property: opacity, filter;
+
   ul {
     padding: 0;
     margin: 0;
     list-style: none;
-    font-size: var(--text-lg);
+    font-size: var(--text-base);
 
     li {
       position: relative;
@@ -231,7 +236,7 @@ const Experience = () => {
         >
           {EXPERIENCE_LIST.map(({ company }, index) => (
             <StyledTabButton
-              className="link"
+              className="link focus:outline-none"
               key={index}
               isActive={activeTabId === index}
               onClick={() => setActiveTabId(index)}
@@ -253,9 +258,8 @@ const Experience = () => {
               <CSSTransition
                 key={index}
                 in={activeTabId === index}
-                timeout={300}
-                classNames="alert"
-                unmountOnExit
+                timeout={500}
+                classNames="item"
               >
                 <StyledTabPanel
                   key={index}
@@ -270,10 +274,7 @@ const Experience = () => {
                     <span>{title}</span>
                     <span className="company">
                       &nbsp;@&nbsp;
-                      <StyledLink
-                        href={url}
-                        className="inline-link link focus:outline-none"
-                      >
+                      <StyledLink href={url} className="link">
                         {company}
                       </StyledLink>
                     </span>
@@ -283,7 +284,11 @@ const Experience = () => {
 
                   <ul>
                     {workDone &&
-                      workDone.map((item, key) => <li key={key}>{item} </li>)}
+                      workDone.map((item, key) => (
+                        <li key={key}>
+                          <span dangerouslySetInnerHTML={{ __html: item }} />
+                        </li>
+                      ))}
                   </ul>
                 </StyledTabPanel>
               </CSSTransition>

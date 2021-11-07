@@ -2,13 +2,13 @@ import React from "react";
 import { Nav, Footer, Social, Email } from "./index";
 import { GlobalStyle } from "../styles";
 
-const Layout = ({ children }) => (
+const Layout = ({ children, location }) => (
   <div id="root">
     <GlobalStyle />
-    <Nav />
+    <Nav location={location} />
     <Social />
     <Email />
-    <div class="mx-auto flex flex-col">{children}</div>
+    <div className="mx-auto flex flex-col">{children}</div>
     <Footer />
   </div>
 );

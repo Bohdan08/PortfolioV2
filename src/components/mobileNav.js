@@ -5,6 +5,7 @@ import { NAV_LINKS } from "../constants";
 
 const StyledHamburgerButton = styled.button`
   display: none;
+
   @media (max-width: 768px) {
     display: flex;
     position: relative;
@@ -97,7 +98,7 @@ const StyledSidebar = styled.aside`
     width: min(75vw, 400px);
     height: 100vh;
     outline: 0;
-    background-color: #112240;
+    background-color: var(--pantone);
     box-shadow: -10px 0px 30px -15px rgba(2, 12, 27, 0.7);
     z-index: 9;
     transform: translateX(${({ menuOpen }) => (menuOpen ? 0 : 100)}vw);
@@ -140,11 +141,7 @@ const MobileNav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
-  // style={{
-  //   transform: `translateX(${menuOpen ? "0" : "100"})}vw)`,
-  //   visibility: `${menuOpen ? "visible" : "hidden"}`,
-  // }}
-  console.log(menuOpen, "menuOpen");
+
   return (
     <div className="block md:hidden">
       {" "}
@@ -154,17 +151,13 @@ const MobileNav = () => {
           onClick={toggleMenu}
           menuOpen={menuOpen}
           aria-label="Menu"
-          className="focus: outline"
+          className="focus:outline"
         >
           <div className="ham-box">
             <div className="ham-box-inner" />
           </div>
         </StyledHamburgerButton>
-        <StyledSidebar
-          className="menu-sidebar"
-          menuOpen={menuOpen}
-          aria-hidden={!menuOpen}
-        >
+        <StyledSidebar menuOpen={menuOpen} aria-hidden={!menuOpen}>
           <nav>
             {NAV_LINKS && (
               <ul>
@@ -179,6 +172,7 @@ const MobileNav = () => {
             )}
             <div className="mt-10">
               <a
+                href="/resume.pdf"
                 className="hover:text-green-300 border rounded border-green-300 py-3 px-4 pointer"
                 target="_blank"
                 rel="noopener noreferrer"

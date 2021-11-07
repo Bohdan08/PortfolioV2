@@ -54,6 +54,13 @@ const Footer = () => (
           </li>
         ))}
       </ul>
+      <p className="py-2">
+        Inspired by{" "}
+        <a href="https://brittanychiang.com" target="_blank" rel="noreferrer">
+          {" "}
+          brittanychiang.com
+        </a>
+      </p>
     </StyledSocialLinks>
   </StyledFooter>
 );
