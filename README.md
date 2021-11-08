@@ -16,7 +16,7 @@
   <a href="https://brittanychiang.com" target="_blank">Brittanychiang.com</a> inspired me to update my existing <a href="https://portfolio-49bce.firebaseapp.com" target="_blank"> portfolio </a>. In my opinion, her design and architecture are truly flawless. I'm very thankful to her that she keeps her project open-source so that other devs can learn and follow best practices of making web apps. 
   </br>
 
-<a href="https://gallant-euclid-bbef8a.netlify.app/" target="_blank">bohdanmartyniuk.com</a> built with <a href="https://www.gatsbyjs.org/" target="_blank">Gatsby</a> and hosted with <a href="https://www.netlify.com/" target="_blank">Netlify
+<a href="https://gallant-euclid-bbef8a.netlify.app/" target="_blank">Bohdanmartyniuk.com</a> built with <a href="https://www.gatsbyjs.org/" target="_blank">Gatsby</a> and hosted with <a href="https://www.netlify.com/" target="_blank">Netlify
 </a>
 
 </p>

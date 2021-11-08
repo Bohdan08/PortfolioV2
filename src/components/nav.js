@@ -18,6 +18,7 @@ const StyledLogo = styled.img`
 
 const Nav = ({ location }) => {
   const isHome = location.hash === "";
+
   return (
     <header className="flex t-0 px-12 h-24 text-gray-200 text-sm">
       <nav className="flex justify-between items-center relative w-full">
@@ -46,10 +47,10 @@ const Nav = ({ location }) => {
           <div>
             <a
               tabIndex="0"
+              href="/resume.pdf"
               className="big-button cursor-pointer hover:text-green-300  border rounded border-green-300 py-3 px-4 ml-4 pointer"
               target="_blank"
               rel="noopener noreferrer"
-              href="/resume.pdf"
             >
               Resume
             </a>

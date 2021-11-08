@@ -9,5 +9,5 @@ module.exports = {
       margin: ["last"],
     },
   },
-  plugins: [],
+  plugins: ["gatsby-plugin-postcss"],
 };
