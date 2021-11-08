@@ -1,51 +1,59 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
+# Portfolio V2
+
+![Preview](https://res.cloudinary.com/koruja/image/upload/v1636382874/intro_k9fmxy.png)
+
+## Table of contents
+
+- [General info](#general-info)
+- [Installation & Set Up](#installation)
+- [Usage](#usage)
+- [Demo](#demo)
+
+## General info
+
+<p align="left">
+  
+  <a href="https://brittanychiang.com" target="_blank">Brittanychiang.com</a> inspired me to update my existing <a href="https://portfolio-49bce.firebaseapp.com" target="_blank"> portfolio </a>. In my opinion, her design and architecture are truly flawless. I'm very thankful to her that she keeps her project open-source so that other devs can learn and follow best practices of making web apps. 
+  </br>
+
+<a href="https://gallant-euclid-bbef8a.netlify.app/" target="_blank">bohdanmartyniuk.com</a> built with <a href="https://www.gatsbyjs.org/" target="_blank">Gatsby</a> and hosted with <a href="https://www.netlify.com/" target="_blank">Netlify
+</a>
+
 </p>
-<h1 align="center">
-  Gatsby minimal starter
-</h1>
 
-## 🚀 Quick start
+## Technologies
 
-1.  **Create a Gatsby site.**
+Project is created with the following technologies:
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+- React.js
+- Gatsby
+- Tailwind CSS
 
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
+## 🛠 Installation & Set Up
 
-2.  **Start developing.**
+1. Install the Gatsby CLI
 
-    Navigate into your new site’s directory and start it up.
+   ```sh
+   npm install -g gatsby-cli
+   ```
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+2. Install and use the correct version of Node using [NVM](https://github.com/nvm-sh/nvm)
 
-3.  **Open the code and start customizing!**
+   ```sh
+   nvm install
+   ```
 
-    Your site is now running at http://localhost:8000!
+3. Install dependencies
 
-    Edit `src/pages/index.js` to see your site update in real-time!
+   ```sh
+   yarn
+   ```
 
-4.  **Learn more**
+## Demo
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+You can visit the app by the following links:
 
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+- https://gallant-euclid-bbef8a.netlify.app/
 
 ## 🚀 Quick start (Gatsby Cloud)
 
