@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import { MobileNav } from "./index";
