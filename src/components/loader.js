@@ -87,7 +87,7 @@ const Loader = ({ finishLoading }) => {
   useEffect(() => {
     setTimeout(() => {
       setIsReady(true);
-    }, 100);
+    }, 0);
   });
 
   console.log(isReady, "isReady");

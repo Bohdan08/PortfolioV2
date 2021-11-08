@@ -16,34 +16,20 @@ const StyledLogo = styled.img`
   height: 70px;
 `;
 
-const Nav = ({ location, isLoading }) => {
-  const [logoPath, setLogoPath] = useState(false);
-
+const Nav = ({ location }) => {
   const isHome = location.hash === "";
-
-  useEffect(() => {
-    if (!logoPath && !isLoading) {
-      setTimeout(() => {
-        setLogoPath(logo);
-      }, 500);
-    }
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
-
-  console.log(logoPath, "logoPath");
 
   return (
     <header className="flex t-0 px-12 h-24 text-gray-200 text-sm">
       <nav className="flex justify-between items-center relative w-full">
         <div className="flex justify-center items-center">
-          {/* {logoPath ? (
-            isHome ? (
-              <StyledLogo src={logoPath} alt="" />
-            ) : (
-              <Link to="/" aria-label="home">
-                <StyledLogo src={logoPath} alt="" />
-              </Link>
-            )
-          ) : null} */}
+          {isHome ? (
+            <StyledLogo src={logo} alt="" />
+          ) : (
+            <Link to="/" aria-label="home">
+              <StyledLogo src={logo} alt="" />
+            </Link>
+          )}
         </div>
         <div className="md:flex items-center hidden">
           <ul className="flex justify-between p-0 m-0 list-none">
