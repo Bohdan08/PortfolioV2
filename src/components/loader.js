@@ -49,14 +49,7 @@ const Loader = ({ finishLoading }) => {
       .add({
         targets: "#logo path",
         delay: 300,
-        duration: 1500,
-        easing: "easeInOutQuart",
-        strokeDashoffset: [anime.setDashoffset, 0],
-      })
-      .add({
-        targets: "#logo #path4",
-        delay: 300,
-        duration: 1500,
+        duration: 500,
         easing: "easeInOutQuart",
         strokeDashoffset: [anime.setDashoffset, 0],
       })
