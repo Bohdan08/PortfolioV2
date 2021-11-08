@@ -19,6 +19,7 @@ const StyledLogo = styled.img`
 const Nav = ({ location, isLoading }) => {
   const isHome = location.hash === "";
 
+  console.log(isLoading, "loadingNAV");
   return (
     <header className="flex t-0 px-12 h-24 text-gray-200 text-sm">
       <nav className="flex justify-between items-center relative w-full">

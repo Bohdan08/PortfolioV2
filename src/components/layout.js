@@ -39,6 +39,8 @@ const Layout = ({ children, location }) => {
     handleExternalLinks();
   }, [isLoading]); // eslint-disable-line react-hooks/exhaustive-deps
 
+  console.log(isLoading, "isLoadingLayout");
+  console.log(isHome, "isHOMELayout");
   return (
     <div id="root">
       <GlobalStyle />
