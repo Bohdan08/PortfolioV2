@@ -17,30 +17,30 @@ const StyledLogo = styled.img`
 `;
 
 const Nav = ({ location, isLoading }) => {
-  const [isIconReady, setIconReady] = useState(false);
+  const [logoPath, setLogoPath] = useState(false);
 
   const isHome = location.hash === "";
 
   useEffect(() => {
-    if (!isIconReady && !isLoading) {
+    if (!logoPath && !isLoading) {
       setTimeout(() => {
-        setIconReady(true);
+        setLogoPath(logo);
       }, 500);
     }
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-  console.log(isIconReady, "isIconReady");
+  console.log(logoPath, "logoPath");
 
   return (
     <header className="flex t-0 px-12 h-24 text-gray-200 text-sm">
       <nav className="flex justify-between items-center relative w-full">
         <div className="flex justify-center items-center">
-          {isIconReady ? (
+          {logoPath ? (
             isHome ? (
-              <StyledLogo src={logo} alt="" />
+              <StyledLogo src={logoPath} alt="" />
             ) : (
               <Link to="/" aria-label="home">
-                <StyledLogo src={logo} alt="" />
+                <StyledLogo src={logoPath} alt="" />
               </Link>
             )
           ) : null}
