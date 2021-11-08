@@ -16,20 +16,20 @@ const StyledLogo = styled.img`
   height: 70px;
 `;
 
-const Nav = ({ location }) => {
+const Nav = ({ location, isLoading }) => {
   const isHome = location.hash === "";
 
   return (
     <header className="flex t-0 px-12 h-24 text-gray-200 text-sm">
       <nav className="flex justify-between items-center relative w-full">
         <div className="flex justify-center items-center">
-          {isHome ? (
+          {isHome && !isLoading ? (
             <StyledLogo src={logo} alt="" />
-          ) : (
+          ) : !isLoading ? (
             <Link to="/" aria-label="home">
               <StyledLogo src={logo} alt="" />
             </Link>
-          )}
+          ) : null}
         </div>
         <div className="md:flex items-center hidden">
           <ul className="flex justify-between p-0 m-0 list-none">

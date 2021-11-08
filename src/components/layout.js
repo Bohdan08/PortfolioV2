@@ -46,7 +46,7 @@ const Layout = ({ children, location }) => {
         <Loader finishLoading={() => setIsLoading(false)} />
       ) : (
         <div className="flex flex-col min-h-screen">
-          <Nav location={location} />
+          <Nav location={location} isLoading={isLoading} />
           <Social />
           <Email />
           <div className="mx-auto flex flex-col">{children}</div>
