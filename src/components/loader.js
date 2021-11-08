@@ -78,19 +78,16 @@ const Loader = ({ finishLoading }) => {
   };
 
   useEffect(() => {
-    const timeout = setTimeout(() => setIsMounted(true), 1000);
+    const timeout = setTimeout(() => setIsMounted(true), 10);
     animate();
 
+    setTimeout(() => {
+      setIsReady(true);
+      animate();
+    }, 100);
     return () => clearTimeout(timeout);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-  useEffect(() => {
-    setTimeout(() => {
-      setIsReady(true);
-    }, 0);
-  });
-
-  console.log(isReady, "isReady");
   return (
     <StyledLoader className="loader" isMounted={isMounted}>
       {isReady && (
