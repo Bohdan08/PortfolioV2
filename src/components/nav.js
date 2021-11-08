@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import { MobileNav } from "./index";
@@ -17,19 +17,32 @@ const StyledLogo = styled.img`
 `;
 
 const Nav = ({ location, isLoading }) => {
+  const [isIconReady, setIconReady] = useState(false);
+
   const isHome = location.hash === "";
 
-  console.log(isLoading, "loadingNAV");
+  useEffect(() => {
+    if (!isIconReady && !isLoading) {
+      setTimeout(() => {
+        setIconReady(true);
+      }, 0);
+    }
+  }, []);
+
+  console.log(isIconReady, "isIconReady");
+
   return (
     <header className="flex t-0 px-12 h-24 text-gray-200 text-sm">
       <nav className="flex justify-between items-center relative w-full">
         <div className="flex justify-center items-center">
-          {isHome && !isLoading ? (
-            <StyledLogo src={logo} alt="" />
-          ) : !isLoading ? (
-            <Link to="/" aria-label="home">
+          {isIconReady ? (
+            isHome ? (
               <StyledLogo src={logo} alt="" />
-            </Link>
+            ) : (
+              <Link to="/" aria-label="home">
+                <StyledLogo src={logo} alt="" />
+              </Link>
+            )
           ) : null}
         </div>
         <div className="md:flex items-center hidden">
