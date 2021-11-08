@@ -25,9 +25,9 @@ const Nav = ({ location, isLoading }) => {
     if (!isIconReady && !isLoading) {
       setTimeout(() => {
         setIconReady(true);
-      }, 0);
+      }, 500);
     }
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   console.log(isIconReady, "isIconReady");
 
