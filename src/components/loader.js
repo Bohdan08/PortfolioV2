@@ -39,6 +39,7 @@ const StyledLoader = styled.div`
 
 const Loader = ({ finishLoading }) => {
   const [isMounted, setIsMounted] = useState(false);
+  const [isReady, setIsReady] = useState(false);
 
   const animate = () => {
     const loader = anime.timeline({
@@ -77,17 +78,26 @@ const Loader = ({ finishLoading }) => {
   };
 
   useEffect(() => {
-    const timeout = setTimeout(() => setIsMounted(true), 10);
+    const timeout = setTimeout(() => setIsMounted(true), 1000);
     animate();
 
     return () => clearTimeout(timeout);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
+  useEffect(() => {
+    setTimeout(() => {
+      setIsReady(true);
+    }, 100);
+  });
+
+  console.log(isReady, "isReady");
   return (
     <StyledLoader className="loader" isMounted={isMounted}>
-      <div className="logo-wrapper">
-        <IconLoader />
-      </div>
+      {isReady && (
+        <div className="logo-wrapper">
+          <IconLoader />
+        </div>
+      )}
     </StyledLoader>
   );
 };
