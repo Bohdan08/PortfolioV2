@@ -27,16 +27,16 @@ module.exports = {
         ],
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-manifest`,
-    //   options: {
-    //     name: "BohdanMartyniuk",
-    //     short_name: "BohdanMartyniuk",
-    //     start_url: "/",
-    //     background_color: "#151617",
-    //     display: "minimal-ui",
-    //     icon: "src/images/LogoMakr-3Abh9q.png",
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: "BohdanMartyniuk",
+        short_name: "BohdanMartyniuk",
+        start_url: "/",
+        background_color: "#151617",
+        display: "minimal-ui",
+        icon: "src/images/LogoMakr-3Abh9q.png",
+      },
+    },
   ],
 };
