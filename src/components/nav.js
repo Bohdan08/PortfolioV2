@@ -16,11 +16,15 @@ const StyledLogo = styled.img`
   height: 70px;
 `;
 
+const StyledHeader = styled.header`
+  height: 100px;
+`;
+
 const Nav = ({ location }) => {
   const isHome = location.hash === "";
 
   return (
-    <header className="flex t-0 px-12 h-24 text-gray-200 text-sm">
+    <StyledHeader className="flex t-0 px-12 text-gray-200 text-sm">
       <nav className="flex justify-between items-center relative w-full">
         <div className="flex justify-center items-center">
           {isHome ? (
@@ -58,7 +62,7 @@ const Nav = ({ location }) => {
         </div>
         <MobileNav />
       </nav>
-    </header>
+    </StyledHeader>
   );
 };
 export default Nav;

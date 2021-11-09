@@ -49,7 +49,7 @@ const Layout = ({ children, location }) => {
           <Nav location={location} isLoading={isLoading} />
           <Social />
           <Email />
-          <div className="mx-auto flex flex-col">{children}</div>
+          <div id="content">{children}</div>
           <Footer />
         </div>
       )}
