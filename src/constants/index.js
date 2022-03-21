@@ -92,7 +92,7 @@ export const PROJECTS_INFO = [
     project: "KORUJA",
     description:
       "React Landing Page for a wholesale company based in South Korea",
-    url: "https://koruja-shop.ru",
+    url: "https://www.korujashop.com",
     mainTechnology: "React",
     features: [
       "A Company info",
