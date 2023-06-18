@@ -369,7 +369,7 @@ const Projects = () => {
                     <div>
                       <h4 className="text-xl"> {project} </h4>
                       <p className="pt-2">{description}</p>
-                      {features.length ? (
+                      {features?.length ? (
                         <>
                           {" "}
                           <p className="text-green-300 pt-2"> Features </p>
