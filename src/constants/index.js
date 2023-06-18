@@ -88,17 +88,9 @@ export const PROJECTS_INFO = [
   {
     project: "TheTenn",
     description: `The web application designed to promote a brand-new bank in the USA. 
-    The app incorporates a referral systemdesigned to motivate users to refer their friends and earn rewards.`,
-
+    The app incorporates a referral system designed to motivate users to refer their friends and earn rewards.`,
     url: "https://thetenn.com",
-
     mainTechnology: "Next.js",
-    // features: [
-    //   "Unique lessons crafted by professional and experienced coaches",
-    //   "Different categories such as Reading, Watching and Vocabulary",
-    //   "Users can save their current progress",
-    //   "A user profile with settings and statistic",
-    // ],
     technologies: [
       "Next.js",
       "TypeScript",
@@ -108,9 +100,57 @@ export const PROJECTS_INFO = [
       "CSS/SCSS",
       "Tailwind",
     ],
-    // github: "https://gitlab.com/Bohdan881/in_english_with__love",
     imgSrc:
       "https://res.cloudinary.com/dc9iwt9e5/image/upload/v1687111301/thetennDarkMode_n5cmdz.png",
+  },
+  {
+    project: "Olympic Combat",
+    description: `The web app aims to provide a platform for parents to book a free assessment for their children for Martial Art classes.`,
+    url: "https://join.olympiccombat.io",
+    mainTechnology: "Next.js",
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Firebase",
+      "HTML",
+      "CSS/SCSS",
+      "Tailwind",
+      "Calendly API",
+    ],
+    imgSrc:
+      "https://res.cloudinary.com/dc9iwt9e5/image/upload/v1687111326/joinOC_xqnluh.png",
+  },
+  {
+    project: "Hubpay Money Transfers",
+    description: `The web app designed to promote oversears business payments via Hubpay.`,
+    url: "https://landing.hubpayapp.com/business?company=1",
+    mainTechnology: "Next.js",
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Firebase",
+      "HTML",
+      "CSS/SCSS",
+      "Tailwind",
+    ],
+    imgSrc:
+      "https://res.cloudinary.com/dc9iwt9e5/image/upload/v1687111415/hubpayB2b_zajp6c.png",
+  },
+  {
+    project: "Hubpay Money Transfers",
+    description: `The web app designed to promote an online money transfer platform.`,
+    url: "https://transfers.hubpayapp.com/money-transfer/europe/aed-to-eur",
+    mainTechnology: "Next.js",
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Firebase",
+      "HTML",
+      "CSS/SCSS",
+      "Bootstrap",
+    ],
+    imgSrc:
+      "https://res.cloudinary.com/dc9iwt9e5/image/upload/v1687111400/hubpayTransfers_lcvhsw.png",
   },
   {
     project: "English With Love",
