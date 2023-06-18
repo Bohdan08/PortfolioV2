@@ -121,7 +121,7 @@ export const PROJECTS_INFO = [
       "https://res.cloudinary.com/dc9iwt9e5/image/upload/v1687111326/joinOC_xqnluh.png",
   },
   {
-    project: "Hubpay Money Transfers",
+    project: "Hubpay for Business",
     description: `The web app designed to promote oversears business payments via Hubpay.`,
     url: "https://landing.hubpayapp.com/business?company=1",
     mainTechnology: "Next.js",
