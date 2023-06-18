@@ -369,12 +369,17 @@ const Projects = () => {
                     <div>
                       <h4 className="text-xl"> {project} </h4>
                       <p className="pt-2">{description}</p>
-                      <p className="text-green-300 pt-2"> Features </p>
-                      <StyledList className="list-outside text-sm">
-                        {features.map((item) => (
-                          <li key={item}>{item} </li>
-                        ))}
-                      </StyledList>
+                      {features.lengthg ? (
+                        <>
+                          {" "}
+                          <p className="text-green-300 pt-2"> Features </p>
+                          <StyledList className="list-outside text-sm">
+                            {features.map((item) => (
+                              <li key={item}>{item} </li>
+                            ))}
+                          </StyledList>{" "}
+                        </>
+                      ) : null}
 
                       <p className="text-green-300 pt-5"> Main Technologies </p>
                       <StyledListSkills className="list-outside text-sm">
