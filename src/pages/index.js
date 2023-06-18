@@ -12,7 +12,6 @@ import {
   Contact,
 } from "../components/sections";
 
-// import "../styles/GlobalStyle.js";
 
 const StyledMain = styled.main`
   margin: 0 auto;
