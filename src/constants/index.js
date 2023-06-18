@@ -22,6 +22,7 @@ export const NAV_LINKS = [
 export const DAILY_SKILLS = [
   "JavaScript ",
   "TypeScript",
+  "Next.js",
   "React",
   "Redux",
   "HTML",
@@ -76,9 +77,41 @@ export const EXPERIENCE_LIST = [
   },
 ];
 
-export const PROJECTS_TECHNOLOGIES = ["React", "React Native", "Vue"];
+export const PROJECTS_TECHNOLOGIES = [
+  "Next.js",
+  "React",
+  "React Native",
+  "Vue",
+];
 
 export const PROJECTS_INFO = [
+  {
+    project: "TheTenn",
+    description: `The web application designed to promote a brand-new bank in the USA. 
+    The app incorporates a referral systemdesigned to motivate users to refer their friends and earn rewards.`,
+
+    url: "https://thetenn.com",
+
+    mainTechnology: "Next.js",
+    // features: [
+    //   "Unique lessons crafted by professional and experienced coaches",
+    //   "Different categories such as Reading, Watching and Vocabulary",
+    //   "Users can save their current progress",
+    //   "A user profile with settings and statistic",
+    // ],
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Redux",
+      "Firebase",
+      "HTML",
+      "CSS/SCSS",
+      "Tailwind",
+    ],
+    // github: "https://gitlab.com/Bohdan881/in_english_with__love",
+    imgSrc:
+      "https://res.cloudinary.com/dc9iwt9e5/image/upload/v1687111301/thetennDarkMode_n5cmdz.png",
+  },
   {
     project: "English With Love",
     description:
