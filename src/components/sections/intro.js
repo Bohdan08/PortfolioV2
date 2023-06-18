@@ -41,18 +41,7 @@ const Intro = () => (
     </StyledHeader>
     <p className="pt-5 text-gray-400 text-lg text-center">
       {" "}
-      I’m a software engineer specializing in building web-applications. <br />
-      Currently, I’m focused on building accessible, mobile-first, responsive
-      web-pages at{" "}
-      <StyledLink
-        className="text-green-300 pointer outline-none"
-        href="https://www.bmo.com/main/personal"
-        target="_blank"
-        rel="noreferrer"
-      >
-        Bank of Montreal
-      </StyledLink>
-      .
+      I’m a software engineer specializing in building web-applications.
     </p>
   </section>
 );
