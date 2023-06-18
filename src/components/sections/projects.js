@@ -319,7 +319,7 @@ const Projects = () => {
   return (
     <StyledProjectsSection id="projects">
       {" "}
-      <h2 className="section-heading">Side Projects</h2>
+      <h2 className="section-heading">Selected Projects</h2>
       <div className="inner">
         <StyledTabList
           role="tablist"
