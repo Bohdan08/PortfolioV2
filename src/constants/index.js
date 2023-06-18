@@ -103,24 +103,24 @@ export const PROJECTS_INFO = [
     imgSrc:
       "https://res.cloudinary.com/koruja/image/upload/v1636132454/portfolio/koruja/kmain_yhe2ny_1_qpglpl_reduced.png",
     // "https://res.cloudinary.com/koruja/image/upload/v1609727249/portfolio/koruja/kmain_yhe2ny.png",
-    technologies: ["JavaScript ", "HTML", "React", "CSS/SCCS", "Semantic UI"],
+    technologies: ["React", "JavaScript ", "HTML", "CSS/SCCS", "Semantic UI"],
     github: "https://gitlab.com/Bohdan881/in_english_with__love",
   },
 
-  {
-    project: "Reviewer",
-    description: "Dr. Wilderman Patient Review Form",
-    url: "https://reviewclever.com/#/home",
-    mainTechnology: "React",
-    features: [
-      "A three-phase application",
-      "A rate component with a clinic's contact info",
-    ],
-    imgSrc:
-      "https://res.cloudinary.com/koruja/image/upload/v1636132198/portfolio/reviewer/ReviwerReduced_mksyha.png",
-    technologies: ["JavaScript ", "HTML", "React", "CSS", "AWS/EC2"],
-    github: "https://github.com/Bohdan08/repman-ui",
-  },
+  // {
+  //   project: "Reviewer",
+  //   description: "Dr. Wilderman Patient Review Form",
+  //   url: "https://reviewclever.com/#/home",
+  //   mainTechnology: "React",
+  //   features: [
+  //     "A three-phase application",
+  //     "A rate component with a clinic's contact info",
+  //   ],
+  //   imgSrc:
+  //     "https://res.cloudinary.com/koruja/image/upload/v1636132198/portfolio/reviewer/ReviwerReduced_mksyha.png",
+  //   technologies: ["JavaScript ", "HTML", "React", "CSS", "AWS/EC2"],
+  //   github: "https://github.com/Bohdan08/repman-ui",
+  // },
   // Vue
   {
     project: "Portfolio",
