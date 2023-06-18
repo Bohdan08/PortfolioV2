@@ -26,14 +26,32 @@ export const DAILY_SKILLS = [
   "Redux",
   "HTML",
   "CSS/SCSS",
+  "Tailwind",
+  "Firebase",
 ];
 
 export const EXPERIENCE_LIST = [
   {
+    company: "Scotiabank",
+    title: "Software Engineer",
+    url: "https://www.scotiabank.com/ca/en/personal.html",
+    timeLine: "January 2021 - Present",
+    workDone: [
+      `Develop and maintain web applications, including the customer supportportal 
+      <a href='https://help.scotiabank.com' target='_blank' class='text-green-300 pointer outline-none'>Help Centre</a> 
+      and the booking platform <a href='https://hello.scotiabank.com/book' target='_blank' class='text-green-300 pointer outline-none'> Online Appointment Booking </a>`,
+      `Utilize Next.js/React.js, JavaScript/TypeScript for the frontend, and Node.js and Contentful CMS for the backend`,
+      `Implement a set of new features in the application, based on userfeedback and business requirements`,
+      "Use Figma to collaborate with the design team to create intuitive and user-friendly interfaces, ensuring seamless navigation and interactio",
+      "Conduct regular vulnerability assessments and security scans using webscanning tools like Black Duck, Fortify and SonarQube",
+      "Conduct thorough code reviews and performed rigorous testing to ensurehigh-quality code, optimal performance, and adherence to best practices",
+    ],
+  },
+  {
     company: "BMO",
     title: "Frontend Developer",
     url: "https://www.bmo.com/main/personal",
-    timeLine: "July 2021 - Present",
+    timeLine: "July 2021 - January 2021",
     workDone: [
       "Built web pages that are responsive and performant for <a href='https://www.bmo.com/main/personal' target='_blank' class='text-green-300 pointer outline-none'> BMO.com </a> and <a href='https://www.bmoharris.com/main/personal' target='_blank' class='text-green-300 pointer outline-none'> BMO Harris.com </a> public sites that serve millions of users on a daily basis",
       "Remediated web pages to make them accessible for all types of users following WCAG 2.0 AA Accessibility guidelines, AODA (Accessibility for Ontarians with Disabilities Act) and SEO best practices",
